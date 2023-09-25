@@ -1,0 +1,119 @@
+* {
+  /* box-sizing: border-box; */
+}
+
+:focus {
+  /* TODO */
+}
+
+body {
+  background: linear-gradient(to right, orange, red);
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  /* Center horizontally */
+  align-items: center;
+  /* Center vertically */
+  height: 100vh;
+  /* Set the body's height to the viewport height */
+}
+
+input {
+  /* TODO */
+}
+
+.search-container {
+  padding: 10px;
+  /* Add padding for spacing */
+  border: 1px solid #676767;
+  /* Add a standard gray border */
+  border-radius: 5px;
+  /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  /* Slight shadow to the bottom */
+  background: linear-gradient(to right, rgba(255, 165, 0, 0.5), rgba(255, 69, 0, 0.5));
+  /* Background gradient */
+  display: flex;
+  /* Use flexbox to center the input */
+  align-items: center;
+  /* Center vertically within the container */
+  width: 400px;
+  position: relative;
+}
+
+.search-container input,
+.search-container .suggestions {
+  /* TODO */
+}
+
+/* Style the search input */
+.search-container input {
+  flex: 1;
+  /* Allow the input to grow and fill the container */
+  border: none;
+  /* Remove default border */
+  background: transparent;
+  /* Transparent background */
+  padding: 8px;
+  /* Add padding for spacing inside the input */
+  font-size: 16px;
+  /* Increase font size */
+  outline: none;
+  /* Remove the default input outline */
+}
+
+.search-container .suggestions {
+  max-height: 250px;
+  /* Adjust this value as needed */
+  overflow-y: auto;
+  /* Enable vertical scrolling if needed */
+}
+
+ul {
+  /* TODO */
+}
+
+ul.has-suggestions {
+  /* TODO */
+}
+
+.suggestions ul {
+  list-style: none;
+  /* Remove the default bullet points */
+  padding: 0;
+  /* Remove default padding */
+  margin: 0;
+  /* Remove default margin */
+}
+
+ul li {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.suggestions ul li.hovered {
+  background-color: orange;
+  /* Change the background color on hover */
+  cursor: pointer;
+  /* Change the cursor to a pointer on hover */
+}
+
+input {
+  /* TODO */
+}
+
+.suggestions {
+  position: absolute;
+  /* Position the dropdown absolutely */
+  top: 100%;
+  /* Position it below the search input */
+  left: 0;
+  /* Align it with the left edge of the container */
+  width: 100%;
+  /* Make it full-width */
+  background: linear-gradient(to right, rgba(255, 165, 0, 0.5), rgba(255, 69, 0, 0.5));
+  /* Other existing styles for the dropdown */
+}
