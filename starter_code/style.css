@@ -75,11 +75,13 @@ ul {
   /* TODO */
 }
 
-ul.has-suggestions {
-  /* TODO */
+/* CSS specificity */
+.suggestions ul.has-suggestions {
+  display: block;
 }
 
 .suggestions ul {
+  display: none;
   list-style: none;
   /* Remove the default bullet points */
   padding: 0;
@@ -94,7 +96,7 @@ ul li {
   padding: 5px;
 }
 
-.suggestions ul li.hovered {
+.suggestions ul li:hover {
   background-color: orange;
   /* Change the background color on hover */
   cursor: pointer;
