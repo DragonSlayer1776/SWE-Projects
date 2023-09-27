@@ -18,12 +18,12 @@ function showSuggestions(results, inputVal) {
 			const li = document.createElement('li');
 			const suggestionText = result.replace(new RegExp(inputVal, 'gi'), match => `<strong>${match}</strong>`);
 			li.innerHTML = suggestionText;
-			li.addEventListener('mouseenter', () => {
-				li.classList.add('hovered');
-			});
-			li.addEventListener('mouseleave', () => {
-				li.classList.remove('hovered');
-			});
+			// li.addEventListener('mouseenter', () => {
+			// 	li.classList.add('hovered');
+			// });
+			// li.addEventListener('mouseleave', () => {
+			// 	li.classList.remove('hovered');
+			// });
 			suggestions.appendChild(li);
 		});
 		suggestions.classList.add('has-suggestions');
@@ -34,11 +34,10 @@ function showSuggestions(results, inputVal) {
 
 
 // Add this function to close suggestions when clicking outside
+// Issue 1: this function will only run on the first click, where it isn't clicking on the suggestions
 function closeSuggestionsOnClickOutside(e) {
 	if (!document.querySelector('.suggestions').contains(e.target)) {
 		suggestions.classList.remove('has-suggestions');
-		// Remove the event listener after closing suggestions
-		document.removeEventListener('click', closeSuggestionsOnClickOutside);
 	}
 }
 
@@ -47,6 +46,7 @@ function useSuggestion(e) {
 	if (e.target.tagName === 'LI') {
 		const selectedSuggestion = e.target.textContent;
 		input.value = selectedSuggestion;
+		suggestions.classList.remove('has-suggestions');
 	}
 }
 
@@ -57,6 +57,7 @@ input.addEventListener('keyup', (e) => {
 });
 
 // Add an event listener to close suggestions when clicking outside
+// this will only run once, when we load the page
 document.addEventListener('click', closeSuggestionsOnClickOutside);
 
 // Remove the click event listener for closing suggestions from useSuggestion
